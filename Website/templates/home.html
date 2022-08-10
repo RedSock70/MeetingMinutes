@@ -4,7 +4,16 @@
     <ul class="list-group list-group-flush" id="notes">
       {% for note in user.notes %}
       <li class="list-group-item">
+        {{ note.subject }}            
         {{ note.data }}
+        {{ note.absents }}
+        {{ note.raisedby }}
+        {{ note.actions }}
+        {{ note.tobea }}
+        {{ note.subsequent }}
+        {{ note.completion }}
+        {{ note.date }}
+
         <button type="button" class="close" onClick="deleteNote({{ note.id }})">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -12,7 +21,25 @@
       {% endfor %}
     </ul>
     <form method="POST">
-      <textarea name="note" id="note" class="form-control"></textarea>
+
+      <h2>Subject Matter </h2>
+      <textarea name="subject" id="subject" class="form-control"></textarea>
+      <h2>info</h2>
+      <textarea name="info" id="info" class="form-control"></textarea>
+      <h2>absents</h2>
+      <textarea name="absents" id="absents" class="form-control"></textarea>
+      <h2>raisedby</h2>
+      <textarea name="raisedby" id="raisedby" class="form-control"></textarea>
+      <h2>actions</h2>
+      <textarea name="actions" id="actions" class="form-control"></textarea>
+      <h2>tobea</h2>
+      <textarea name="tobea" id="tobea" class="form-control"></textarea>
+      <h2>subsequent</h2>
+      <textarea name="subsequent" id="subsequent" class="form-control"></textarea>
+      <h2>completion</h2>
+      <textarea name="completion" id="completion" class="form-control"></textarea>
+
+
       <br />
       <div align="center">
         <button type="submit" class="btn btn-primary">Add Minute</button>
